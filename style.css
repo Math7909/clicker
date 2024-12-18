@@ -1,0 +1,174 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8f9;  /* Fond pastel clair */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-family: 'Verdana', sans-serif;
+  color: #3b3b3b;
+}
+
+/* Container de la page d'accueil */
+.container {
+  text-align: center;
+  padding: 30px;
+  background-color: #cce8e9; /* Bleu clair pastel */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #eeabff;  /* Couleur pastel verte/bleu */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ebb0fa;
+}
+
+/* Game Styles */
+.game {
+  display: flex;
+  justify-content: flex-start; /* Alignement à gauche */
+  width: 90%;
+  max-width: 1200px;
+  height: 70%;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.left-panel {
+  width: 35%;
+  background-color: #ebfffd;  /* Couleur de fond pastel très claire */
+  padding: -45px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.center-panel {
+  width: 45%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px; /* Ajustement pour rapprocher la zone de clic */
+}
+
+.donut-zone {
+  margin-top: 20px;
+  width: 180px;  /* Taille du donut */
+  height: 180px;
+  cursor: pointer;
+  position: relative; /* Nécessaire pour positionner les points flottants */
+}
+
+.donut-zone img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.scoreboard {
+  font-size: 24px;
+  text-align: left; /* Alignement à gauche */
+  margin-left: 10px; /* Espace à gauche */
+}
+
+.upgrades, .high-scores {
+  margin-top: 30px;
+}
+
+h3 {
+  color: #4e4e4e;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #ff9a91;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #ff6f61;
+  transform: scale(1.05);
+}
+
+/* Points flottants animés */
+.floating-points {
+  position: absolute;
+  top: 300px;  /* Placer les points juste au-dessus de la zone de clic */
+  left: 53%;
+  pointer-events: none;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-out;
+}
+
+.floating-points span {
+  font-size: 20px;
+  color: #ff6f61;
+  font-weight: bold;
+  position: absolute;
+  animation: moveRandom 1s ease-out infinite;
+}
+
+/* Animation pour le déplacement aléatoire des points */
+@keyframes moveRandom {
+  0% {
+      transform: translateY(0) translateX(0);
+  }
+  50% {
+      transform: translateY(-30px) translateX(30px);
+  }
+  100% {
+      transform: translateY(0) translateX(0);
+  }
+}
+
+.upgrades li {
+  cursor: pointer;
+}

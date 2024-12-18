@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu du Donut</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page d'accueil -->
+    <div class="container" id="home">
+        <h1>Bienvenue dans le jeu du Donut</h1>
+        <label for="username">Votre pseudo :</label>
+        <input type="text" id="username" placeholder="Entrez votre pseudo" required>
+        <button onclick="startGame()">Confirmer</button>
+    </div>
+
+    <!-- Page de jeu -->
+    <div class="game" id="game" style="display:none;">
+        <div class="left-panel">
+            <!-- Insta -->
+            <div class="Insta">
+                <h6>Insta: matheis894</h6>
+                <ul id="Insta-list"></ul>
+            </div>
+            <style>
+                .Insta h6 {
+                    font-size: 15px;
+                    font-weight: bold;
+                    position: absolute;
+                    top: 30px;
+                    left: 1080px;
+                    background-color: #ffffff;
+                    padding: 10px;
+                    border: 1px solid #ff9a91;
+                    border-radius: 5px;
+                    font-family: Arial, sans-serif;
+                    color:#ff9a91
+                }
+            </style>
+            <!-- Meilleurs scores -->
+            <div class="scoreboard">
+                <h3>Meilleurs Scores</h3>
+                <ul id="high-scores"></ul>
+            </div>
+            <!-- Améliorations -->
+            <div class="upgrades">
+                <h3>Améliorations</h3>
+                <ul id="upgrade-list"></ul>
+            </div>
+        </div>
+
+        <div class="center-panel">
+            <!-- Score et donut -->
+            <div class="scoreboard">
+                <h2>Score : <span id="score">0</span></h2>
+            </div>
+            <div class="donut-zone" onclick="clickDonut()">
+                <img id="donut" src="donut.jpeg" alt="Donut">
+            </div>
+            <div id="floatingPoints" class="floating-points"></div> <!-- Zone pour les points flottants -->
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
